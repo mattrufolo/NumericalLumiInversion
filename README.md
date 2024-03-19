@@ -86,13 +86,13 @@ Unfortunately for a memory reason, I could not represent the most interesting an
 python 001_make_folders.py
 python 002_cronjob.py
 ```
-And once the root of the tree has been runned, once that computation in its log_file is 'completed'. You can run 
+Once the tree_maker.log in the root is 'completed'. You can run 
 
 ```bash
 python 002_cronjob.py
 ```
 
-Once also all the 15 leafs are 'completed' in the log_file it is possible to see the result running
+Once also all the 15 leafs are 'completed' in the tree_maker.log, it is possible to see the result running
 
 ```bash
 python 003_last_post_process.py

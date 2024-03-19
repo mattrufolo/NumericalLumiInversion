@@ -103,7 +103,7 @@ ax.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsilo
 ax.legend(fontsize = 14, loc = 'upper right')
 ax.set_xlim((-0.25,0.25))
 ax.set_ylim((-0.25,0.25))
-fig.savefig(f'{folder}/one_eps_{names}_LS.png' ,bbox_inches = "tight")
+fig.savefig(f'{folder}/one_eps/{names}_LS.png' ,bbox_inches = "tight")
 
 ########## COMPUTATION ITERATIONS
 
@@ -139,7 +139,7 @@ ax1.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsil
 ax1.set_xlim((-0.25,0.25))
 ax1.set_ylim((-0.25,0.25))
 cbar1 = fig1.colorbar(scatter0, ax=ax1)
-fig1.savefig(f'{folder}/one_eps_{names}_iter_LS.png' ,bbox_inches = "tight")
+fig1.savefig(f'{folder}/one_eps/{names}_iter_LS.png' ,bbox_inches = "tight")
 
 ########################
 
@@ -154,7 +154,7 @@ ax2.set_xlabel(r'$\frac{(\vec{\epsilon}_{1})-(\vec{\epsilon}_{10})}{(\vec{\epsil
 ax2.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsilon}_{2})}$', fontsize = 20)
 
 cbar1 = fig1.colorbar(scatter0, ax=ax2)
-fig2.savefig(f'{folder}/one_eps_zoom_{names}_iter_LS.png' ,bbox_inches = "tight")
+fig2.savefig(f'{folder}/one_eps/zoom_{names}_iter_LS.png' ,bbox_inches = "tight")
 ################
 
 iter_1 = [eval(ii.split('\nObjective')[0])[0] for ii in contents.split('=============\nSolution: ')[1:]]
@@ -170,7 +170,7 @@ fig3.suptitle('Relative error on Luminosity estimation over the last 20 iteratio
 ax3.plot(np.linspace(len(L_iteration)-20,len(L_iteration)-1,len(L_iteration)-(len(L_iteration)-20)),rel_err_L)
 ax3.set_xlabel('Iterations of Least Squares', fontsize = 10)
 ax3.set_ylabel(r'$\frac{(\mathcal{L}_{target}-\mathcal{L}_{iter})}{\mathcal{L}_{target}}$', fontsize = 20)
-fig3.savefig(f'{folder}/one_eps_rel_err_L_{names}.png' ,bbox_inches = "tight")
+fig3.savefig(f'{folder}/one_eps/rel_err_L_{names}.png' ,bbox_inches = "tight")
 
 
 #################
@@ -286,7 +286,7 @@ ax.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsilo
 ax.legend(fontsize = 14, loc = 'upper right')
 ax.set_xlim((-0.25,0.25))
 ax.set_ylim((-0.25,0.25))
-fig.savefig(f'{folder}/one_eps_{names}_LS.png' ,bbox_inches = "tight")
+fig.savefig(f'{folder}/one_eps/{names}_LS.png' ,bbox_inches = "tight")
 
 ########## COMPUTATION ITERATIONS
 
@@ -322,7 +322,7 @@ ax1.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsil
 ax1.set_xlim((-0.25,0.25))
 ax1.set_ylim((-0.25,0.25))
 cbar1 = fig1.colorbar(scatter0, ax=ax1)
-fig1.savefig(f'{folder}/one_eps_{names}_iter_LS.png' ,bbox_inches = "tight")
+fig1.savefig(f'{folder}/one_eps/{names}_iter_LS.png' ,bbox_inches = "tight")
 
 ########################
 
@@ -337,7 +337,7 @@ ax2.set_xlabel(r'$\frac{(\vec{\epsilon}_{1})-(\vec{\epsilon}_{10})}{(\vec{\epsil
 ax2.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsilon}_{2})}$', fontsize = 20)
 
 cbar1 = fig1.colorbar(scatter0, ax=ax2)
-fig2.savefig(f'{folder}/one_eps_zoom_{names}_iter_LS.png' ,bbox_inches = "tight")
+fig2.savefig(f'{folder}/one_eps/zoom_{names}_iter_LS.png' ,bbox_inches = "tight")
 ################
 
 iter_1 = [eval(ii.split('\nObjective')[0])[0] for ii in contents.split('=============\nSolution: ')[1:]]
@@ -353,7 +353,7 @@ fig3.suptitle('Relative error on Luminosity estimation over the last 20 iteratio
 ax3.plot(np.linspace(len(L_iteration)-20,len(L_iteration)-1,len(L_iteration)-(len(L_iteration)-20)),rel_err_L)
 ax3.set_xlabel('Iterations of Least Squares', fontsize = 10)
 ax3.set_ylabel(r'$\frac{(\mathcal{L}_{target}-\mathcal{L}_{iter})}{\mathcal{L}_{target}}$', fontsize = 20)
-fig3.savefig(f'{folder}/one_eps_rel_err_L_{names}.png' ,bbox_inches = "tight")
+fig3.savefig(f'{folder}/one_eps/rel_err_L_{names}.png' ,bbox_inches = "tight")
 
 
 #################
@@ -465,7 +465,7 @@ ax.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsilo
 ax.legend(fontsize = 14, loc = 'upper right')
 ax.set_xlim((-0.25,0.25))
 ax.set_ylim((-0.25,0.25))
-fig.savefig(f'{folder}/one_eps_{names}_LS.png' ,bbox_inches = "tight")
+fig.savefig(f'{folder}/one_eps/{names}_LS.png' ,bbox_inches = "tight")
 
 ########## COMPUTATION ITERATIONS
 
@@ -501,7 +501,7 @@ ax1.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsil
 ax1.set_xlim((-0.25,0.25))
 ax1.set_ylim((-0.25,0.25))
 cbar1 = fig1.colorbar(scatter0, ax=ax1)
-fig1.savefig(f'{folder}/one_eps_{names}_iter_LS.png' ,bbox_inches = "tight")
+fig1.savefig(f'{folder}/one_eps/{names}_iter_LS.png' ,bbox_inches = "tight")
 
 ########################
 
@@ -516,7 +516,7 @@ ax2.set_xlabel(r'$\frac{(\vec{\epsilon}_{1})-(\vec{\epsilon}_{10})}{(\vec{\epsil
 ax2.set_ylabel(r'$\frac{(\vec{\epsilon}_{2})-(\vec{\epsilon}_{20})}{(\vec{\epsilon}_{2})}$', fontsize = 20)
 
 cbar1 = fig1.colorbar(scatter0, ax=ax2)
-fig2.savefig(f'{folder}/one_eps_zoom_{names}_iter_LS.png' ,bbox_inches = "tight")
+fig2.savefig(f'{folder}/one_eps/zoom_{names}_iter_LS.png' ,bbox_inches = "tight")
 ################
 
 iter_1 = [eval(ii.split('\nObjective')[0])[0] for ii in contents.split('=============\nSolution: ')[1:]]
@@ -532,7 +532,7 @@ fig3.suptitle('Relative error on Luminosity estimation over the last 20 iteratio
 ax3.plot(np.linspace(len(L_iteration)-20,len(L_iteration)-1,len(L_iteration)-(len(L_iteration)-20)),rel_err_L)
 ax3.set_xlabel('Iterations of Least Squares', fontsize = 10)
 ax3.set_ylabel(r'$\frac{(\mathcal{L}_{target}-\mathcal{L}_{iter})}{\mathcal{L}_{target}}$', fontsize = 20)
-fig3.savefig(f'{folder}/one_eps_rel_err_L_{names}.png' ,bbox_inches = "tight")
+fig3.savefig(f'{folder}/one_eps/rel_err_L_{names}.png' ,bbox_inches = "tight")
 
 
 #################
@@ -651,7 +651,7 @@ ax[0].set_xlim((-0.25,0.25))
 ax[0].set_ylim((-0.25,0.25))
 ax[1].set_xlim((-0.25,0.25))
 ax[1].set_ylim((-0.25,0.25))
-fig.savefig(f'{folder}/one_eps_{names}_LS.png')
+fig.savefig(f'{folder}/one_eps/{names}_LS.png')
 
 # ########## COMPUTATION ITERATIONS
 
@@ -700,7 +700,7 @@ ax1[1].set_xlim((-0.25,0.25))
 ax1[1].set_ylim((-0.25,0.25))
 cbar1 = fig1.colorbar(scatter0, ax=ax1[0])
 cbar2 = fig1.colorbar(scatter1, ax=ax1[1])
-fig1.savefig(f'{folder}/one_eps_{names}_iter_LS.png')
+fig1.savefig(f'{folder}/one_eps/{names}_iter_LS.png')
 
 # ########################
 
@@ -723,7 +723,7 @@ ax2[1].set_ylabel(r'$\frac{(\vec{\epsilon}_{y})_{2}-(\vec{\epsilon}_{y0})_{2}}{(
 
 cbar1 = fig2.colorbar(scatter0, ax=ax2[0])
 cbar2 = fig2.colorbar(scatter1, ax=ax2[1])
-fig2.savefig(f'{folder}/one_eps_zoom_{names}_iter_LS.png')
+fig2.savefig(f'{folder}/one_eps/zoom_{names}_iter_LS.png')
 # ################
 
 iter_x1 = [eval(ii.split('\nObjective')[0])[0] for ii in contents.split('=============\nSolution: ')[1:]]
@@ -741,7 +741,7 @@ fig3.suptitle('Relative error on Luminosity estimation over the last 100 iterati
 ax3.plot(np.linspace(len(L_iteration)-100,len(L_iteration)-1,len(L_iteration)-(len(L_iteration)-100)),rel_err_L)
 ax3.set_xlabel('Iterations of Least Squares', fontsize = 20)
 ax3.set_ylabel(r'$\frac{(\mathcal{L}_{target}-\mathcal{L}_{iter})}{\mathcal{L}_{target}}$', fontsize = 20)
-fig3.savefig(f'{folder}/one_eps_rel_err_L_{names}.png')
+fig3.savefig(f'{folder}/one_eps/rel_err_L_{names}.png')
 
 # #################
 
