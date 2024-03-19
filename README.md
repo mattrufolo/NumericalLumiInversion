@@ -2,14 +2,14 @@
 
 # Tool for the analysis of LHC filling schemes
 
-**Authors:** G. Iadarola, A. Poyet, G. Sterbini
+**Authors:** M. Rufolo
 
-**Requirements:** Python 3.7, numpy, pandas
+**Requirements:** Python 3.12
 
 ## To install:
 ```bash
-git clone https://github.com/PyCOMPLETE/FillingPatterns.git
-pip install ./FillingPatterns
+git clone https://github.com/mattrufolo/NumericalLumiInversion.git
+pip install ./NumericalLumiInversion
 cd NumericalLumiInversion
 pip install ./inv_gauss_tree_maker
 ```
@@ -94,3 +94,6 @@ It's possible to compute the same output using another algorithm, implemented no
 patt.compute_beam_beam_schedule(n_lr_per_side=16, previous_algorithm = 0)
 ```
 
+## Acknowledgements
+
+All the computations done in this repository has been done in parallel, using the tree maker structure from the [gitlab_repository](https://gitlab.cern.ch/abpcomputing/sandbox/tree_maker.git)
