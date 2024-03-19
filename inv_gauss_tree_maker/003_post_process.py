@@ -7,6 +7,13 @@ import matplotlib.cm as cm
 import json
 import itertools
 from scipy.stats import gaussian_kde
+from inversion_fun import Inv_gauss_xy as  inv_g
+from inversion_fun import Inv_gauss_xy12 as  inv_g_xy12
+from inversion_fun import lumi_formula_no_inner as lumi
+import random
+import contextlib
+import matplotlib.cm as cm
+from matplotlib.gridspec import GridSpec
 
 def reject_outliers(data, m=7):
     idx = abs(data - np.mean(data)) < m * np.std(data)
@@ -15,15 +22,7 @@ def reject_outliers(data, m=7):
 #%%
 #TREES PLOT FOR 2 DIMENSIONS problems without error
 
-from matplotlib import pyplot as plt
-from inversion_fun import Inv_gauss_xy as  inv_g
-from inversion_fun import lumi_formula_no_inner as lumi
-import random
-import json
-import contextlib
-import matplotlib.cm as cm
-from matplotlib.gridspec import GridSpec
-import numpy as np
+
 
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]
 [dif_mu0x,dif_mu0y] = [0,0]
@@ -115,8 +114,6 @@ eps = [eps1,eps1,eps2,eps2]
 
 
 dict_shift = dict
-# for j in range(iterations):
-#     print(j)
 with open(f"output_zoom.txt","w") as h,contextlib.redirect_stdout(h):
     [est_eps,function, jacobian, time_LS, iterations] = inv_g.inv_gauss_xy(eps1,eps2,dict_shift, verbose = 2)
 
@@ -203,43 +200,12 @@ plt.xlabel('Relative error')
 plt.ylabel('Recurrence')
 plt.savefig(f'{folder}/histogram_rel_err.png')
 
-# plt.figure()
-# plt.hist(rel_err,bins = 'auto')
-# plt.title('Histogram of the L2 norm of the relative error')
-# plt.xlabel('L2 norm of relative error')
-# plt.ylabel('Recurrence')
-# rel_err1_noerrxy = reject_outliers(rel_err1_noerrxy)
-# rel_err1_errxy = reject_outliers(rel_err1_errxy)
-# rel_err1_errxy2 = reject_outliers(rel_err1_errxy2)
-
-# plt.figure()
-
-# plt.hist(rel_err1_errxy, bins = 200, alpha = 0.5, color = 'red', label = 'with error')
-# plt.hist(rel_err1_errxy2, bins = 8, alpha = 0.5, color = 'green', label = 'with error')
-# plt.hist(rel_err1_noerrxy, bins =200, color = 'black', label = 'without error')
-# plt.xscale('log')
-# plt.title(r'Component-wise histogram of $\Delta{\vec{\epsilon}}/\vec{\epsilon}$ in log scale', fontsize = 16)
-# plt.legend()
-# plt.xticks(fontsize = 13)
-# plt.yticks(fontsize = 13)
-# plt.xlabel('Relative error', fontsize = 16)
-# plt.ylabel('Recurrence', fontsize = 16)
-# plt.savefig('paper_hist/hist_xy_noerr_err.png')
 
 
 #%%
 
 #TREES PLOT FOR 2 DIMENSIONS problems with error, using 1IP
 
-from matplotlib import pyplot as plt
-from inversion_fun import Inv_gauss_xy as  inv_g
-from inversion_fun import lumi_formula_no_inner as lumi
-import random
-import json
-import contextlib
-import matplotlib.cm as cm
-from matplotlib.gridspec import GridSpec
-import numpy as np
 
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]
 [dif_mu0x,dif_mu0y] = [0,0]
@@ -331,8 +297,6 @@ eps = [eps1,eps1,eps2,eps2]
 
 
 dict_shift = dict
-# for j in range(iterations):
-#     print(j)
 with open(f"output_zoom.txt","w") as h,contextlib.redirect_stdout(h):
     [est_eps,function, jacobian, time_LS, iterations] = inv_g.inv_gauss_xy_randerr(eps1,eps2,dict_shift, verbose = 2)
 
@@ -421,16 +385,6 @@ plt.savefig(f'{folder}/histogram_rel_err.png')
 
 #%%
 #TREES PLOT FOR 2 DIMENSIONS problems with error, using 2IPs
-
-from matplotlib import pyplot as plt
-from inversion_fun import Inv_gauss_xy as  inv_g
-from inversion_fun import lumi_formula_no_inner as lumi
-import random
-import json
-import contextlib
-import matplotlib.cm as cm
-from matplotlib.gridspec import GridSpec
-import numpy as np
 
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]
 [dif_mu0x,dif_mu0y] = [0,0]
@@ -522,15 +476,13 @@ eps = [eps1,eps1,eps2,eps2]
 
 
 dict_shift = dict
-# for j in range(iterations):
-#     print(j)
-with open(f"output_zoom3.txt","w") as h,contextlib.redirect_stdout(h):
+with open(f"output_zoom.txt","w") as h,contextlib.redirect_stdout(h):
     [est_eps,function, jacobian, time_LS, iterations] = inv_g.inv_gauss_xy_randerr_2(eps1,eps2,dict_shift, verbose = 2)
 
 
 
 
-with open('output_zoom3.txt') as f:
+with open('output_zoom.txt') as f:
     contents = f.read()
     
 fig1,ax1 = plt.subplots()
@@ -614,15 +566,6 @@ plt.savefig(f'{folder}/histogram_rel_err.png')
 
 # %%
 #TREES PLOT FOR 4 DIMENSIONS problems with no error.
-from matplotlib import pyplot as plt
-from inversion_fun import Inv_gauss_xy12 as  inv_g
-from inversion_fun import lumi_formula_no_inner as lumi
-import random
-import json
-import contextlib
-import matplotlib.cm as cm
-from matplotlib.gridspec import GridSpec
-import numpy as np
 
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]
 [dif_mu0x,dif_mu0y] = [0,0]
@@ -721,10 +664,8 @@ eps = [epsx1,epsy1,epsx2,epsy2]
 
 
 dict_shift = dict
-# for j in range(iterations):
-#     print(j)
 with open(f"output_zoom.txt","w") as h,contextlib.redirect_stdout(h):
-    [est_eps,function, jacobian, time_LS, iterations] = inv_g.inv_gauss_single_par(epsx1,epsy1,epsx2,epsy2,dict_shift, verbose = 2, iteration = 0)
+    [est_eps,function, jacobian, time_LS, iterations] = inv_g_xy12.inv_gauss_single_par(epsx1,epsy1,epsx2,epsy2,dict_shift, verbose = 2, iteration = 0)
 
 
 

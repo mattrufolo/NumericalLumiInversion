@@ -1,6 +1,12 @@
-'''This module gives a set of static method to compute the kinematic quantities of a particle. 
+import argparse
+
+parser=argparse.ArgumentParser(
+    description='''This module gives a set of static method to compute the kinematic quantities of a particle. 
 All the methods are static and have as predefined restEnergy_GeV and elementaryCharge argument the proton's ones.
-'''
+''')
+
+
+
 import numpy as np
 restEnergyProton_GeV=0.93827231
 elementaryChargeProton=1.

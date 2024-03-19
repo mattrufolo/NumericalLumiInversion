@@ -26,14 +26,6 @@ print("numbu")
 [dmu0x,dmu0y] = [0,0]
 [dpx,dpy] = [0,0]
 
-#parameters_sym = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_px,dif_py, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-#            betax,betay,betax+1e-4,betay+1e-4,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
-
-# parameters_sym_x = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-#             betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
-
-# parameters_sym_y = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-#            betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
 
 parameters_sym_1 = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
             betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
@@ -52,24 +44,6 @@ dict_par = {'f':0,'nb':1,'N1':2,'N2':3,'energy_tot1':4,'energy_tot2':5,'mu0x':6,
 def L_over_parameters_sym(epsx1,epsy1,epsx2,epsy2, par = parameters_sym_1):
 
     return lumi.L(epsx1,epsy1,epsx2,epsy2,*par)
-
-def L_over_parameters_sym_noise(epsx1,epsy1,epsx2,epsy2,noise_px1, par = parameters_sym_1):
-        par_err = copy.copy(par)
-        par_err[dict_par['px']] += noise_px1
-        # par_err[dict_par['px']+2] += noise_px2
-        # par_err[dict_par['py']] += noise_py1
-        # par_err[dict_par['py']+2] += noise_py2
-        #print(par)
-        return lumi.L(epsx1,epsy1,epsx2,epsy2,*par_err)
-
-def L_over_parameters_sym_noise(epsx1,epsy1,epsx2,epsy2,noise_px1, par = parameters_sym_1):
-    par_err = copy.copy(par)
-    par_err[dict_par['px']] += noise_px1
-    # par_err[dict_par['px']+2] += noise_px2
-    # par_err[dict_par['py']] += noise_py1
-    # par_err[dict_par['py']+2] += noise_py2
-    #print(par)
-    return lumi.L(epsx1,epsy1,epsx2,epsy2,*par_err)
 
 # computation in order to obtain the shift in order to change the original luminosity of a percentage!
 def percent_sym_short(epsx1,epsy1,epsx2,epsy2,delta,param,m, par = parameters_sym_1):
@@ -108,8 +82,6 @@ def inv_gauss_12(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, par = parameters
             shift_par= fsolve(lambda x:percent_sym_short(eps1,eps1,eps2,eps2,x,param,dict_shift[param][j]), x0 = 0)[0]
             delta_par[f'{dict_shift[param][j]}{param}'] = copy.copy(par)
             delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]]+= shift_par
-            # if param in ['mu0x','mu0y','px','py']:
-            #     delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]+2]-= shift_par
             if param in ['betax','betay','alphax','alphay']:
                 delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]+2]+= shift_par
             if param in ['sigmaz']:
@@ -150,20 +122,10 @@ def inv_gauss_12(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, par = parameters
         roots = least_squares(func_to_zero,x0 = [2.3e-6,2.3e-6],bounds = ([1.5e-6,1.5e-6],[3e-6,3e-6]),max_nfev = nfev, xtol = 1e-16)
         end_LS = time.time()
         time_LS = end_LS-start_LS
-    #print(time_LS)
-    #print(roots.nfev)
-    #print(roots.message)
-    #print(roots.fun)
-    #start = time.time()
-    #func_to_zero([epsx1,epsy1,epsx2,epsy2])
-    #end = time.time()
-    #print(end-start)
-    #print( LA.norm((np.array(roots.x[:4])-np.array([epsx1,epsy1,epsx2,epsy2]))/LA.norm(np.array([epsx1,epsy1,epsx2,epsy2]))))
-    
+
     par_inter = 'sigmaz'
 
     if par_inter in dict_shift:
-#        print([delta_par[f'{dict_shift[par_inter][j]}{par_inter}'][18:20] for j in range(len(dict_shift[par_inter]))])
         return [roots.x,roots.fun, roots.jac, time_LS, roots.nfev,[delta_par[f'{dict_shift[par_inter][j]}{par_inter}'][18:20] for j in range(len(dict_shift[par_inter]))]]
     else:
         return [roots.x,roots.fun, roots.jac, time_LS, roots.nfev]
@@ -206,8 +168,6 @@ def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteratio
                     shift_par = vec_shift[k]
                     delta_par[f'{dict_shift[param][j]}{param}_{k}'] = copy.copy(parx)
                     delta_par[f'{dict_shift[param][j]}{param}_{k}'][dict_par[param]]+= shift_par
-                    # if param in ['mu0x','mu0y','px','py']:, removed beacause we are speaking of differences.
-                    #     delta_par[f'{dict_shift[param][j]}{param}_{k}'][dict_par[param]+2]-= shift_par
                     if param in ['betax','betay','alphax','alphay']:
                         delta_par[f'{dict_shift[param][j]}{param}_{k}'][dict_par[param]+2]+= shift_par
                     if param in ['sigmaz']:
@@ -251,18 +211,6 @@ def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteratio
                         random_noise = rnd.normal(av_random_noise,svd_random_noise,1)[0]
                     constants = np.concatenate([constants,[L_par+random_noise]])
     print(f"{ ', '.join(map(str, constants))}")
-    
-
-
-    # def func_to_zero(x):
-    #     output = [(L_over_parameters_sym(x[0],x[1],x[0],x[1])-constants[0])**2]
-    #     for i in range(len(dict_shift)):
-    #         param = list(dict_shift.keys())[i]
-    #         for j in range(len(dict_shift[param])):
-    #             for k in range(n_shifts):
-    #                 output = np.concatenate([output,[(L_over_parameters_sym(x[0],x[1],x[0],x[1], par = delta_par[f'{dict_shift[param][j]}{param}_{k}'])-\
-    #                     constants[i*n_shifts+1+k])**2]])
-    #     return np.sqrt(np.sum(output))
 
     def func_to_zero(x):
         output = [L_over_parameters_sym(x[0],x[0],x[1],x[1],par= parameters_sym_1)-constants[0]]
@@ -291,8 +239,7 @@ def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteratio
             iter = log_iteration(x)
             return func_to_zero(x)
         start_LS = time.time()
-        #roots = least_squares(func_to_zero_log,x0 = [2.3e-6,2.3e-6],bounds = ([1e-10,1e-10],[10.6e-6,10.6e-6]),max_nfev = nfev, xtol = 1e-16)
-        #roots = least_squares(func_to_zero_log,x0 = [2.3e-6,2.3e-6],bounds = ([1.5e-6,1.5e-6],[3e-6,3e-6]),max_nfev = nfev, xtol = 1e-16)
+        
         roots = least_squares(func_to_zero_log,x0 = [2.3e-6,2.3e-6],bounds = ([0.8*2.3e-6,0.8*2.3e-6],[1.2*2.3e-6,1.2*2.3e-6]),max_nfev = nfev, xtol = 1e-16)
         end_LS = time.time()
         time_LS = end_LS-start_LS
@@ -302,8 +249,7 @@ def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteratio
 
     else: 
         start_LS = time.time()
-        #roots = least_squares(func_to_zero,x0 = [2.3e-6,2.3e-6],bounds = ([1e-10,1e-10],[10.6e-6,10.6e-6]),max_nfev = nfev, xtol = 1e-16)
-        #roots = least_squares(func_to_zero,x0 = [2.3e-6,2.3e-6],bounds = ([1.5e-6,1.5e-6],[3e-6,3e-6]),max_nfev = nfev, xtol = 1e-16)
+        
         roots = least_squares(func_to_zero,x0 = [2.3e-6,2.3e-6],bounds = ([0.8*2.3e-6,0.8*2.3e-6],[1.2*2.3e-6,1.2*2.3e-6]),max_nfev = nfev, xtol = 1e-16)
         end_LS = time.time()
         time_LS = end_LS-start_LS
@@ -315,16 +261,5 @@ def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteratio
     print(roots.nfev)
     print(roots.message)
     print(roots.fun)
-    #start = time.time()
-    #func_to_zero([epsx1,epsy1,epsx2,epsy2])
-    #end = time.time()
-    #print(end-start)
-    #print( LA.norm((np.array(roots.x[:4])-np.array([epsx1,epsy1,epsx2,epsy2]))/LA.norm(np.array([epsx1,epsy1,epsx2,epsy2]))))
-    
-#     par_inter = 'sigmaz'
 
-#     if par_inter in dict_shift:
-# #        print([delta_par[f'{dict_shift[par_inter][j]}{par_inter}'][18:20] for j in range(len(dict_shift[par_inter]))])
-#         return [roots.x,roots.fun, roots.jac, time_LS, roots.nfev,[delta_par[f'{dict_shift[par_inter][j]}{par_inter}'][18:20] for j in range(len(dict_shift[par_inter]))]]
-#     else:
     return [roots.x,roots.fun, roots.jac, time_LS, roots.nfev]

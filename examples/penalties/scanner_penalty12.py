@@ -78,7 +78,7 @@ def points_along_line(start_point, direction_vector, num_points):
 import ast
 import math
 
-with open('output_zoom_eps12.txt') as f:
+with open('output_zoom.txt') as f:
     contents = f.read()
 
 constants = list(eval(contents.split('=============\nSolution: ')[0].split('\n')[-2]))

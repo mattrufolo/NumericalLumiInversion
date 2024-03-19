@@ -1,4 +1,5 @@
 *.pyc
 *.png
+*output_zoom.txt
 /build
 /NumericalLuminosityInversion.egg-info
