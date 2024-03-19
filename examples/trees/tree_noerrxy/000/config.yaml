@@ -1,0 +1,7 @@
+# This is my input
+number_of_iterations: 400     # something to write
+# parquet_filename: 2361_1730_1781_hybrid.parquet   # this is the file name
+# parquet_filename_check: 2361_1730_1781_hybrid.parquet
+
+core: 1
+log_file: tree_maker.log

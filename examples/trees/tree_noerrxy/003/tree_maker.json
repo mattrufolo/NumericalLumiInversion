@@ -1,0 +1,7 @@
+{
+  "name": "root",
+  "parameters": {
+    "core": 4,
+    "number_of_iterations": 400
+  }
+}

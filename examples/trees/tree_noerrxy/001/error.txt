@@ -1,0 +1,2 @@
+/home/mrufolo/.conda/envs/mruf_env/lib/python3.12/site-packages/scipy/optimize/_lsq/least_squares.py:111: UserWarning: Setting `xtol` below the machine epsilon (2.22e-16) effectively disables the corresponding termination condition.
+  warn("Setting `{}` below the machine epsilon ({:.2e}) effectively "
