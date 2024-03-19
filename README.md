@@ -1,6 +1,6 @@
 # NumericalLumiInversion
 
-# Tool for the analysis of LHC filling schemes
+## Repository in order to compute the transverse emittance from the luminosity
 
 **Authors:** M. Rufolo
 

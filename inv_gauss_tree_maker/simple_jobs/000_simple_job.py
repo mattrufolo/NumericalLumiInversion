@@ -10,6 +10,7 @@ from scipy.optimize import fsolve, minimize, minimize_scalar, least_squares, roo
 # sys.path.append("/var/data/mrufolo")
 from inversion_fun import Inv_gauss_xy12 as  inv_g
 import yaml
+import tree_maker
 #from cpu_load_generator import load_single_core, loaload_all_coresd_all_cores, from_profile
 
 
@@ -19,9 +20,6 @@ with open('config.yaml', 'r') as file:
 
 # Start tree_maker logging if log_file is present in config
 # # try:
-import sys
-sys.path.append('../../inv_gauss_tree_maker/')
-from inv_gauss_tree_maker import tree_maker
 if 'log_file' not in cfg.keys():
     tree_maker = None
 # except:
@@ -46,10 +44,10 @@ eps = []
 sol_LS = np.zeros([cfg['number_of_iterations'],4])
 # f_sol = np.zeros([cfg['number_of_iterations'],len(dict_shift)+1])
 # f_sol = np.zeros([cfg['number_of_iterations'],2])
-f_sol = np.zeros([cfg['number_of_iterations'],40000])#two parameters
+f_sol = np.zeros([cfg['number_of_iterations'],9604])#two parameters
 # Jac_sol = np.zeros([cfg['number_of_iterations'],len(dict_shift)+1,2])
 # Jac_sol = np.zeros([cfg['number_of_iterations'],2,2])
-Jac_sol = np.zeros([cfg['number_of_iterations'],40000,4])#two parameters
+Jac_sol = np.zeros([cfg['number_of_iterations'],9604,4])#two parameters
 delta_sigmaz = {}
 
 for i in range(cfg['number_of_iterations']):

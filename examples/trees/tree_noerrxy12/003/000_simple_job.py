@@ -6,10 +6,9 @@ from matplotlib import pyplot as plt
 import json
 from numpy import linalg as LA
 from scipy.optimize import fsolve, minimize, minimize_scalar, least_squares, root
-import sys
-sys.path.append("/var/data/mrufolo")
-from Inverting_luminosity import Inv_gauss_xy12 as  inv_g
+from inversion_fun import Inv_gauss_xy12 as  inv_g
 import yaml
+import tree_maker
 #from cpu_load_generator import load_single_core, load_all_cores, from_profile
 
 
@@ -19,8 +18,6 @@ with open('config.yaml', 'r') as file:
 
 # Start tree_maker logging if log_file is present in config
 # try:
-sys.path.append("/var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/tree_maker")
-import tree_maker
 if 'log_file' not in cfg.keys():
     tree_maker = None
 # except:

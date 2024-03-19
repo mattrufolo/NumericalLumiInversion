@@ -16,7 +16,7 @@
   use_yaml_children: true
   # first generation
   children:
-    '../examples/trees/tree_errxy12_40000':
+    '../examples/trees/tree_errxy12_betascan':
       'number_of_iterations' : 1
       'core' : 0
       'seed': 42
