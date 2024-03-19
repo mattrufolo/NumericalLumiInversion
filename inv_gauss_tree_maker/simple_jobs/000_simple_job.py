@@ -18,9 +18,10 @@ with open('config.yaml', 'r') as file:
     cfg = yaml.safe_load(file)
 
 # Start tree_maker logging if log_file is present in config
-# try:
-sys.path.append("/var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/tree_maker")
-import tree_maker
+# # try:
+import sys
+sys.path.append('../../inv_gauss_tree_maker/')
+from inv_gauss_tree_maker import tree_maker
 if 'log_file' not in cfg.keys():
     tree_maker = None
 # except:

@@ -26,9 +26,10 @@ parameters_sym_x = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_px,dif_
 
 
 
-dict_shift = {'mu0x':[0.01]}
+dict_shift = {'mu0x':[0.01]}#,'py':[0.01,0.02]}
+#dict_shift = {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'sigmaz':[0.01]}
 random.seed(41)
-
+#print(len(parameters_sym_x))
 LS = []
 eps = []
 sol_LS = np.zeros([2+1,2])
@@ -87,8 +88,8 @@ with open('output_zoom.txt') as f:
     contents = f.read()
 
 constants = list(eval(contents.split('=============\nSolution: ')[0].split('\n')[-2]))
+# constants = constants[0:-1:2]
 paramx = ast.literal_eval(contents.split('[0.01]\n')[1].split('\n')[0])
-
 
 def L_over_eps_xy(epsx,epsy, par):
     return inv_g.L_over_parameters_sym(epsx,epsy,epsx,epsy, par)
@@ -101,15 +102,14 @@ def penalty_square(xy):
     return [np.sqrt(penalty)]
 
 
-
 iter_x = [eval(ii.split('\n')[0])[0] for ii in contents.split('=============\nSolution: ')[1:]]
 iter_y = [eval(ii.split('\n')[0])[1] for ii in contents.split('=============\nSolution: ')[1:]]
 L_eps_iter = [penalty_square([iter_x[ii+3],iter_y[ii+3]]) for ii in range(len(iter_y)-3)]
 
 
 
-vec_epsx = np.linspace(0.8*2.3e-6,1.2*2.3e-6,50)
-vec_epsy = np.linspace(0.8*2.3e-6,1.2*2.3e-6,50)
+vec_epsx = np.linspace(0.8*2.3e-6,1.2*2.3e-6,500)
+vec_epsy = np.linspace(0.8*2.3e-6,1.2*2.3e-6,500)
 
 
 xv,yv = np.array(np.meshgrid(vec_epsx, vec_epsy))
@@ -158,5 +158,5 @@ cbar1 = plt.colorbar(scatter0)
 cbar1.ax.get_yaxis().labelpad = 15
 cbar1.set_label( "Penalty values", rotation=270, fontsize = 20)
 cbar1.ax.tick_params(labelsize=20) 
-plt.savefig('penalty_xy_noerr.png',dpi = 200, bbox_inches='tight')
+plt.savefig('plots/penalty_xy_noerr.png',dpi = 200, bbox_inches='tight')
 # %%

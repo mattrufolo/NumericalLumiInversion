@@ -114,7 +114,7 @@ def inv_gauss_12(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, par = parameters
                 delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]+2]+= shift_par
             if param in ['sigmaz']:
                 delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]+1]+= shift_par
-    print({'parx' :delta_par})
+    print({'par' :delta_par})
     constants = [L_over_parameters_sym(eps1,eps1,eps2,eps2)]
     for i in range(len(dict_shift)):
         param = list(dict_shift.keys())[i]

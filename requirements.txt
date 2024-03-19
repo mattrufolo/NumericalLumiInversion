@@ -1,0 +1,12 @@
+ipython
+numpy
+matplotlib
+numba
+contextlib
+random
+scipy
+copy
+pathlib
+yaml
+pandas
+json

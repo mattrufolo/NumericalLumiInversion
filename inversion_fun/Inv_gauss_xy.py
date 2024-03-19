@@ -18,7 +18,7 @@ print("numbu")
 #parameters that we imagine and that we set!
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]
 [dif_mu0x,dif_mu0y] = [0,0]
-[dif_px,dif_py] = [320e-6,0]#[160e-6,160e-6]
+[dif_px,dif_py] = [0,320e-6]
 [alphax,alphay] = [0,0]
 [sigmaz] = [0.35]
 [betax,betay] =[0.3,0.3]
@@ -26,20 +26,12 @@ print("numbu")
 [dmu0x,dmu0y] = [0,0]
 [dpx,dpy] = [0,0]
 
-#parameters_sym = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_px,dif_py, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-#            betax,betay,betax+1e-4,betay+1e-4,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
+parameters_sym_x = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_px,dif_py, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
+            betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
 
-# parameters_sym_x = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-#             betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
-
-parameters_sym_y = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_px,dif_py, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
+parameters_sym_y = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
            betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
 
-# parameters_sym_1 = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-#             betax,betay,betax+1e-4,betay+1e-4,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
-
-parameters_sym_x = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
-            betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
 
 # positions of the parameters!!!
 dict_par = {'f':0,'nb':1,'N1':2,'N2':3,'energy_tot1':4,'energy_tot2':5,'mu0x':6,'mu0y':7,'px':8,'py':9,
@@ -89,7 +81,7 @@ def percent_sym_short(epsx1,epsy1,epsx2,epsy2,delta,param,m, par = parameters_sy
         sign = +1
     return abs(c/L_over_parameters_sym(epsx1,epsy1,epsx2,epsy2)+sign*(-m))
 
-def inv_gauss_xy(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, par = parameters_sym_y):
+def inv_gauss_xy(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, par = parameters_sym_x):
     '''
     Inversion the luminosity function in order to obtain the emittances, in the case in which the model
     is coherent and also the parameters, shifting the parameters in the dict_shift
@@ -115,6 +107,7 @@ def inv_gauss_xy(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, par = parameters
                 delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]+2]+= shift_par
             if param in ['sigmaz']:
                 delta_par[f'{dict_shift[param][j]}{param}'][dict_par[param]+1]+= shift_par
+    # print({'boh' :parameters_sym_x})
     print({'par' :delta_par})
     constants = [L_over_parameters_sym(epsx,epsy,epsx,epsy)]
     for i in range(len(dict_shift)):
@@ -429,9 +422,6 @@ def inv_gauss_xy_randerr_2(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, iterat
             for j in range(len(dict_shift[param])):
                 for k in range(n_shifts):
                     for index_par in range(2):
-                        print(len(constants))
-                        print(2*(i*n_shifts+1+k)+index_par)
-                        print(constants[2*(i*n_shifts+1+k)+index_par])
                         delta_par = [delta_parx,delta_pary][index_par]
                         output = np.concatenate([output,[L_over_parameters_sym(x[0],x[1],x[0],x[1], par = delta_par[f'{dict_shift[param][j]}{param}_{k}'])-\
                             constants[2*(i*n_shifts+1+k)+index_par]]])
@@ -556,7 +546,7 @@ def inv_gauss_xy_randerr_2(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, iterat
 #     eps1 = random.uniform(0.8*2.3e-6,1.2*2.3e-6)
 #     eps2 = random.uniform(0.8*2.3e-6,1.2*2.3e-6)
 #     eps = [eps1,eps2]
-#     with open(f"output_zoom1.txt","w") as h,contextlib.redirect_stdout(h):
+#     with open(f"output_zoom2.txt","w") as h,contextlib.redirect_stdout(h):
 #         [sol_LS[i+1],f_sol[i+1],Jac_sol[i+1],timing_LS,nfev_LS] = inv_gauss_xy(eps1,eps2,dict_shift,verbose=2)
 #     LS.append([timing_LS,nfev_LS])
 # rel_err = {'est_eps': sol_LS, 'eps': eps, 'f_sol': f_sol, 'Jacobian': Jac_sol, 'LS': LS}

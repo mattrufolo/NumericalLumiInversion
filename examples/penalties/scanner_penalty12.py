@@ -1,5 +1,5 @@
 #PLOT OF THE PENALTY FUNCTION ON EPS12, WITHOUT ERROR
-
+#%%
 import contextlib
 import random
 import numpy as np
@@ -83,7 +83,6 @@ with open('output_zoom1.txt') as f:
 
 constants = list(eval(contents.split('=============\nSolution: ')[0].split('\n')[-2]))
 paramx = ast.literal_eval(contents.split('[0.01]\n')[1].split('\n')[0])
-paramy = ast.literal_eval(contents.split('[0.01]\n')[1].split('\n')[1])
 
 
 def L_over_eps_12(eps1,eps2, par):
@@ -91,12 +90,9 @@ def L_over_eps_12(eps1,eps2, par):
 
 def penalty_square(xy):
     penalty = (L_over_eps_12(xy[0],xy[1],parameters_sym_1)-constants[0])**2
-    keys = list(paramx['parx'].keys())
-    ax = ['x','y']
+    keys = list(paramx['par'].keys())
     for i in range(int(len(constants))-1):
-       for j in range(1):
-            param = [paramx,paramy][j]
-            penalty += (L_over_eps_12(xy[0],xy[1],param[f'par{ax[j]}'][keys[i]])-constants[(i+1)+j])**2
+            penalty += (L_over_eps_12(xy[0],xy[1],paramx[f'par'][keys[i]])-constants[(i+1)])**2
     return [np.sqrt(penalty)]
 
 
@@ -167,7 +163,9 @@ cbar = plt.colorbar(scatter1)
 cbar.ax.get_yaxis().labelpad = 15
 cbar.set_label( "# iteration LS", rotation=270, fontsize = 16)
 cbar.ax.tick_params(labelsize=14) 
-plt.savefig('penalty_12_sum.png',dpi = 200, bbox_inches='tight')
+plt.savefig('plots/penalty_12.png',dpi = 200, bbox_inches='tight')
 
 #PLOT OF EPS XY FINSH HERE
 #________________
+
+# %%
