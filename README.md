@@ -1,6 +1,6 @@
-# NumericalLumiInversion
+# Numerical Luminosity Inversion
 
-## Repository in order to compute the transverse emittance from the luminosity
+## Repository in order to compute the transverse emittances from the luminosity
 
 **Authors:** M. Rufolo
 
@@ -14,7 +14,7 @@ cd NumericalLumiInversion
 pip install ./inv_gauss_tree_maker
 ```
 
-## To run an example:
+## To run some examples:
 ```bash
 cd examples
 python scanner_penalty12.py
@@ -43,6 +43,7 @@ epsy = random.uniform(0.9*2.3e-6,1.1*2.3e-6)
 #perturbation on offset
 dict_shift = {'mu0x':[0.01]}
 
+#numerical inversion
 [sol,f,J,time,iter] = inv_g.inv_gauss_xy(epsx,epsy,dict_shift)
 ```
 
