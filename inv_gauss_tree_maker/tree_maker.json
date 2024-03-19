@@ -1,0 +1,293 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "name": "000",
+          "parameters": {
+            "core": 1,
+            "number_of_iterations": 50,
+            "seed": 42
+          }
+        },
+        {
+          "name": "001",
+          "parameters": {
+            "core": 2,
+            "number_of_iterations": 50,
+            "seed": 43
+          }
+        },
+        {
+          "name": "002",
+          "parameters": {
+            "core": 3,
+            "number_of_iterations": 50,
+            "seed": 44
+          }
+        },
+        {
+          "name": "003",
+          "parameters": {
+            "core": 4,
+            "number_of_iterations": 50,
+            "seed": 45
+          }
+        },
+        {
+          "name": "004",
+          "parameters": {
+            "core": 5,
+            "number_of_iterations": 50,
+            "seed": 46
+          }
+        },
+        {
+          "name": "005",
+          "parameters": {
+            "core": 6,
+            "number_of_iterations": 50,
+            "seed": 47
+          }
+        },
+        {
+          "name": "006",
+          "parameters": {
+            "core": 7,
+            "number_of_iterations": 50,
+            "seed": 48
+          }
+        },
+        {
+          "name": "007",
+          "parameters": {
+            "core": 8,
+            "number_of_iterations": 50,
+            "seed": 49
+          }
+        },
+        {
+          "name": "008",
+          "parameters": {
+            "core": 9,
+            "number_of_iterations": 50,
+            "seed": 50
+          }
+        },
+        {
+          "name": "009",
+          "parameters": {
+            "core": 10,
+            "number_of_iterations": 50,
+            "seed": 51
+          }
+        },
+        {
+          "name": "010",
+          "parameters": {
+            "core": 11,
+            "number_of_iterations": 50,
+            "seed": 52
+          }
+        },
+        {
+          "name": "011",
+          "parameters": {
+            "core": 12,
+            "number_of_iterations": 50,
+            "seed": 53
+          }
+        },
+        {
+          "name": "012",
+          "parameters": {
+            "core": 13,
+            "number_of_iterations": 50,
+            "seed": 54
+          }
+        },
+        {
+          "name": "013",
+          "parameters": {
+            "core": 14,
+            "number_of_iterations": 50,
+            "seed": 55
+          }
+        },
+        {
+          "name": "014",
+          "parameters": {
+            "core": 15,
+            "number_of_iterations": 50,
+            "seed": 56
+          }
+        },
+        {
+          "name": "015",
+          "parameters": {
+            "core": 16,
+            "number_of_iterations": 50,
+            "seed": 57
+          }
+        },
+        {
+          "name": "016",
+          "parameters": {
+            "core": 17,
+            "number_of_iterations": 50,
+            "seed": 58
+          }
+        },
+        {
+          "name": "017",
+          "parameters": {
+            "core": 18,
+            "number_of_iterations": 50,
+            "seed": 59
+          }
+        },
+        {
+          "name": "018",
+          "parameters": {
+            "core": 19,
+            "number_of_iterations": 50,
+            "seed": 60
+          }
+        },
+        {
+          "name": "019",
+          "parameters": {
+            "core": 20,
+            "number_of_iterations": 50,
+            "seed": 61
+          }
+        },
+        {
+          "name": "020",
+          "parameters": {
+            "core": 21,
+            "number_of_iterations": 50,
+            "seed": 62
+          }
+        },
+        {
+          "name": "021",
+          "parameters": {
+            "core": 22,
+            "number_of_iterations": 50,
+            "seed": 63
+          }
+        },
+        {
+          "name": "022",
+          "parameters": {
+            "core": 23,
+            "number_of_iterations": 50,
+            "seed": 64
+          }
+        },
+        {
+          "name": "023",
+          "parameters": {
+            "core": 24,
+            "number_of_iterations": 50,
+            "seed": 65
+          }
+        },
+        {
+          "name": "024",
+          "parameters": {
+            "core": 25,
+            "number_of_iterations": 50,
+            "seed": 66
+          }
+        },
+        {
+          "name": "025",
+          "parameters": {
+            "core": 26,
+            "number_of_iterations": 50,
+            "seed": 67
+          }
+        },
+        {
+          "name": "026",
+          "parameters": {
+            "core": 27,
+            "number_of_iterations": 50,
+            "seed": 68
+          }
+        },
+        {
+          "name": "027",
+          "parameters": {
+            "core": 28,
+            "number_of_iterations": 50,
+            "seed": 69
+          }
+        },
+        {
+          "name": "028",
+          "parameters": {
+            "core": 29,
+            "number_of_iterations": 50,
+            "seed": 70
+          }
+        },
+        {
+          "name": "029",
+          "parameters": {
+            "core": 30,
+            "number_of_iterations": 50,
+            "seed": 71
+          }
+        },
+        {
+          "name": "030",
+          "parameters": {
+            "core": 31,
+            "number_of_iterations": 50,
+            "seed": 72
+          }
+        },
+        {
+          "name": "031",
+          "parameters": {
+            "core": 32,
+            "number_of_iterations": 50,
+            "seed": 73
+          }
+        }
+      ],
+      "name": "000_errxy12_40000",
+      "parameters": {
+        "core": 0,
+        "number_of_iterations": 1,
+        "seed": 42
+      }
+    }
+  ],
+  "name": "root",
+  "parameters": {
+    "generations": {
+      "1": {
+        "files_to_clone": [
+          "tools.py"
+        ],
+        "job_executable": "000_simple_job.py",
+        "job_folder": "simple_jobs",
+        "run_on": "local_pc"
+      },
+      "2": {
+        "files_to_clone": [
+          "tools.py"
+        ],
+        "job_executable": "000_simple_job.py",
+        "job_folder": "simple_jobs",
+        "run_on": "local_pc"
+      }
+    },
+    "setup_env_script": "activate mruf_env",
+    "use_yaml_children": true
+  }
+}

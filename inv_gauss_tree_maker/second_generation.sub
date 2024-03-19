@@ -1,0 +1,34 @@
+# Running on local pc
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/000/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/001/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/002/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/003/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/004/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/005/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/006/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/007/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/008/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/009/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/010/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/011/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/012/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/013/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/014/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/015/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/016/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/017/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/018/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/019/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/020/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/021/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/022/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/023/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/024/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/025/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/026/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/027/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/028/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/029/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/030/run.sh &
+bash /var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/000_errxy12_40000/031/run.sh &
+#local_pc
