@@ -60,9 +60,9 @@ Parameters | value
 --- | --- 
 Seconds | 0  
 --- | --- 
-Seconds | 0 mu rad
+X<sub>2</sub> | 0 μrad
 --- | --- 
-Seconds | 320 mu rad
+Seconds | 320 μrad
 --- | --- 
 Seconds | 30 cm
 --- | --- 
