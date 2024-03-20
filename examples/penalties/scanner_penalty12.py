@@ -36,7 +36,7 @@ for i in range(1):
     eps1 = random.uniform(0.8*2.3e-6,1.2*2.3e-6)
     eps2 = random.uniform(0.8*2.3e-6,1.2*2.3e-6)
     eps = [eps1,eps2]
-    with open(f"output_zoom1.txt","w") as h,contextlib.redirect_stdout(h):
+    with open(f"output_zoom.txt","w") as h,contextlib.redirect_stdout(h):
         [sol_LS[i+1],f_sol[i+1],Jac_sol[i+1],timing_LS,nfev_LS] = inv_g.inv_gauss_12(eps1,eps2,dict_shift,verbose=2)
     LS.append([timing_LS,nfev_LS])
 rel_err = {'est_eps': sol_LS, 'eps': eps, 'f_sol': f_sol, 'Jacobian': Jac_sol, 'LS': LS}
