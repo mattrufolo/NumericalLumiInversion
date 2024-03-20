@@ -7,6 +7,7 @@ $$
 $$
 
 Assuming that the beam along the three directions have a Gaussian distribution:
+
 $$
         \rho^B_i = \frac{1}{\sqrt{2\pi}\sigma_{i,B}}e^{-\frac{(i-\mu_{i,B})^2}{2\sigma_{i,B}^2}}, \quad \text{with } B\in\{B1,B2\} \text{ and } i\in\{x,y,z\}
 $$
