@@ -16,7 +16,7 @@ pip install ./inv_gauss_tree_maker
 
 ## To run some examples:
 ```bash
-cd examples
+cd examples/penalties
 python scanner_penalty12.py
 python scanner_penaltyxy.py
 python scanner_penaltyxy_err.py
