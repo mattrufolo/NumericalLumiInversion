@@ -22,189 +22,189 @@
       'seed': 42
       children:
         '000':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 1
           'seed': 42
           #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
         '001':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 2
           'seed': 43
           #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'sigmaz':[0.01]}
 
         '002':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 3
           'seed': 44
           #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
         
         '003':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 4
           'seed': 45
           #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01]}
         
         '004':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 5
           'seed': 46
         #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
         '005':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 6
           'seed': 47
         #   #'dict_shift' : {'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
         '006':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 7
           'seed': 48
         #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'sigmaz':[0.01]}
 
         '007':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 8
           'seed': 49
         #   #'dict_shift' : {'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
         '008':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 9
           'seed': 50
         #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
         '009':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 10
           'seed': 51
 
         '010':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 11
           'seed': 52
         #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
         '011':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 12
           'seed': 53
 
         '012':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 13
           'seed': 54
         #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
         '013':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 14
           'seed': 55
 
         '014':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 15
           'seed': 56
         #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
         '015':
-          'number_of_iterations' : 50
+          'number_of_iterations' : 100
           'core' : 16
           'seed': 57
 
-        '016':
-          'number_of_iterations' : 50
-          'core' : 17
-          'seed': 58
-          #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
+        # '016':
+        #   'number_of_iterations' : 50
+        #   'core' : 17
+        #   'seed': 58
+        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
-        '017':
-          'number_of_iterations' : 50
-          'core' : 18
-          'seed': 59
-          #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'sigmaz':[0.01]}
+        # '017':
+        #   'number_of_iterations' : 50
+        #   'core' : 18
+        #   'seed': 59
+        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'sigmaz':[0.01]}
 
-        '018':
-          'number_of_iterations' : 50
-          'core' : 19
-          'seed': 60
-          #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
+        # '018':
+        #   'number_of_iterations' : 50
+        #   'core' : 19
+        #   'seed': 60
+        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
         
-        '019':
-          'number_of_iterations' : 50
-          'core' : 20
-          'seed': 61
-          #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01]}
+        # '019':
+        #   'number_of_iterations' : 50
+        #   'core' : 20
+        #   'seed': 61
+        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01]}
         
-        '020':
-          'number_of_iterations' : 50
-          'core' : 21
-          'seed': 62
-        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
+        # '020':
+        #   'number_of_iterations' : 50
+        #   'core' : 21
+        #   'seed': 62
+        # #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
-        '021':
-          'number_of_iterations' : 50
-          'core' : 22
-          'seed': 63
-        #   #'dict_shift' : {'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
+        # '021':
+        #   'number_of_iterations' : 50
+        #   'core' : 22
+        #   'seed': 63
+        # #   #'dict_shift' : {'px':[0.01],'py':[0.01],'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
-        '022':
-          'number_of_iterations' : 50
-          'core' : 23
-          'seed': 64
-        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'sigmaz':[0.01]}
+        # '022':
+        #   'number_of_iterations' : 50
+        #   'core' : 23
+        #   'seed': 64
+        # #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01],'sigmaz':[0.01]}
 
-        '023':
-          'number_of_iterations' : 50
-          'core' : 24
-          'seed': 65
-        #   #'dict_shift' : {'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
+        # '023':
+        #   'number_of_iterations' : 50
+        #   'core' : 24
+        #   'seed': 65
+        # #   #'dict_shift' : {'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01],'sigmaz':[0.01]}
 
-        '024':
-          'number_of_iterations' : 50
-          'core' : 25
-          'seed': 66
-        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
+        # '024':
+        #   'number_of_iterations' : 50
+        #   'core' : 25
+        #   'seed': 66
+        # #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
-        '025':
-          'number_of_iterations' : 50
-          'core' : 26
-          'seed': 67
+        # '025':
+        #   'number_of_iterations' : 50
+        #   'core' : 26
+        #   'seed': 67
 
-        '026':
-          'number_of_iterations' : 50
-          'core' : 27
-          'seed': 68
-        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
+        # '026':
+        #   'number_of_iterations' : 50
+        #   'core' : 27
+        #   'seed': 68
+        # #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
-        '027':
-          'number_of_iterations' : 50
-          'core' : 28
-          'seed': 69
+        # '027':
+        #   'number_of_iterations' : 50
+        #   'core' : 28
+        #   'seed': 69
 
-        '028':
-          'number_of_iterations' : 50
-          'core' : 29
-          'seed': 70
-        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
+        # '028':
+        #   'number_of_iterations' : 50
+        #   'core' : 29
+        #   'seed': 70
+        # #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
-        '029':
-          'number_of_iterations' : 50
-          'core' : 30
-          'seed': 71
+        # '029':
+        #   'number_of_iterations' : 50
+        #   'core' : 30
+        #   'seed': 71
 
-        '030':
-          'number_of_iterations' : 50
-          'core' : 31
-          'seed': 72
-        #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
+        # '030':
+        #   'number_of_iterations' : 50
+        #   'core' : 31
+        #   'seed': 72
+        # #   #'dict_shift' : {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 
-        '031':
-          'number_of_iterations' : 50
-          'core' : 32
-          'seed': 73
-        #   #'dict_shift' : {'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01]}
+        # '031':
+        #   'number_of_iterations' : 50
+        #   'core' : 32
+        #   'seed': 73
+        # #   #'dict_shift' : {'betax':[0.01],'betay':[0.01],'alphax':[0.01],'alphay':[0.01]}
 
     # '000_child':
     #   'number_of_iterations' : 100
