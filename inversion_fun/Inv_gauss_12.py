@@ -26,6 +26,7 @@ print("numbu")
 [dpx,dpy] = [0,0]
 
 
+#choices of the parameter configurations.
 parameters_sym_1 = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_py,dif_px, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
             betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
 
@@ -176,7 +177,9 @@ def inv_gauss_12(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, par = parameters
 def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteration  = 0):
     '''
     Inversion the luminosity function in order to obtain the emittances considering 
-    the luminosity measurement error, shifting the parameters in the dict_shift once a time.
+    the luminosity measurement error.
+    It consider two different initial configuration for the machine parameters,
+    shifting both the choise using for each the shifts in the dict_shift once a time.
     Input:
         - eps1: emittance for beam1 (x-axis = y-axis)
         - eps2: emittance for beam2 (x-axis = y-axis)
@@ -185,8 +188,7 @@ def inv_gauss_12_randerr(eps1,eps2,dict_shift,nfev = 3000, verbose = 0, iteratio
                       be the shift in percentage on the nominal luminosity value
         - nfev: the maximum number of iteration of the non-linear LS
         - verbose: to print some output
-        - par:  machine parameters
-                (default parameters_sym_1, the nominal configuration)
+
 
     Output:
         - root.x: the numerical solution
