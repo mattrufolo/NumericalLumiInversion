@@ -17,7 +17,7 @@ where
 From this assumption and doing some computation, it is possible to rewrite the luminosity formula like: 
 
 $$
-    L = \underbrace{N_1N_2n_bf_r\frac{\sqrt{{c^2}(\vec{v_1}-\vec{v_2})^2-\vec{v_1}\times\vec{v_2}}}{2c^2}}_{C}\int_{-\infty}^\infty \frac{e^{\frac{-(\mu_{x1}-\mu_{x2})^2}{2\beta(z)(\epsilon_{x1}+\epsilon_{x2})}}e^{\frac{-(\mu_{y1}-\mu_{y2})^2}{2\beta(z)(\epsilon_{y1}+\epsilon_{y2})}}}{\sqrt{2}\pi^{\frac{3}{2}}\sqrt{(\sigma_{x1}^2+\sigma_{x2}^2)}\sqrt{(\sigma_{y1}^2+\sigma_{y2}^2)}}\rho_z^{B1}\rho_z^{B2}dz
+    L = N_1N_2n_bf_r\frac{\sqrt{{c^2}(\vec{v_1}-\vec{v_2})^2-\vec{v_1}\times\vec{v_2}}}{2c^2}\int_{-\infty}^\infty \frac{e^{\frac{-(\mu_{x1}-\mu_{x2})^2}{2\beta(z)(\epsilon_{x1}+\epsilon_{x2})}}e^{\frac{-(\mu_{y1}-\mu_{y2})^2}{2\beta(z)(\epsilon_{y1}+\epsilon_{y2})}}}{\sqrt{2}\pi^{\frac{3}{2}}\sqrt{(\sigma_{x1}^2+\sigma_{x2}^2)}\sqrt{(\sigma_{y1}^2+\sigma_{y2}^2)}}\rho_z^{B1}\rho_z^{B2}dz
 $$
 
 where if we approximate  $\sigma_{u} = \beta(z)\epsilon_{u}, \quad \text{where} u \in \{x1,x2,y1,y2\}$, it is possible to obtain
