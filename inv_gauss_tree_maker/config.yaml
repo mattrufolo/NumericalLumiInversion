@@ -1,5 +1,5 @@
 'root':
-  setup_env_script: 'activate mruf_env'
+  setup_env_script: 'activate base'
   generations:
     1: # Make the particle distribution
       job_folder: 'simple_jobs'
