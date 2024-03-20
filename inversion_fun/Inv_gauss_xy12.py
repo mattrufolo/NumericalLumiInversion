@@ -177,7 +177,7 @@ def inv_gauss_single_par_randerr(epsx1,epsy1,epsx2,epsy2,dict_shift,nfev = 3000,
     '''
     print("ua")
     iteration*=0
-    n_shifts = 9
+    n_shifts = 6
     delta_parx = {'': parameters_sym_x}
     delta_pary = {'': parameters_sym_y}
     delta_parx2 = {'': parameters_sym_x2}
