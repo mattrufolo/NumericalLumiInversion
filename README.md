@@ -59,16 +59,11 @@ As choice for the different parameters, it has be choosen a default choice, insp
 Parameters | value 
 --- | --- 
 dθ<sub>x</sub>,dθ<sub>y</sub>,dμ<sub>x</sub>,dμ<sub>y</sub> | 0  
---- | --- 
 Δθ<sub>0x</sub> | 0 μrad
---- | --- 
 Δθ<sub>0y</sub> | 320 μrad
---- | --- 
-Seconds | 30 cm
---- | --- 
-Seconds | 0 cm 
---- | --- 
-Seconds | 9 cm
+β<sub>x1</sub><sup>*</sup>,β<sub>x2</sub><sup>*</sup>,β<sub>y1</sub><sup>*</sup>,β<sub>y2</sub><sup>*</sup>| 30 cm
+α<sub>x1</sub>,α<sub>x2</sub>,α<sub>y1</sub>,α<sub>y2</sub>| 0 cm 
+σ<sub>z1</sub>,σ<sub>z2</sub>| 9 cm
 
 
 Anyway the user can be changed it.
