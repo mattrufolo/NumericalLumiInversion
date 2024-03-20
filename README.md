@@ -60,17 +60,15 @@ Parameters | value
 --- | --- 
 Seconds | 0  
 --- | --- 
-Seconds | 0 &mu rad
+Seconds | 0 mu rad
 --- | --- 
-Seconds | 301  
+Seconds | 320 mu rad
 --- | --- 
-Seconds | 301  
+Seconds | 30 cm
 --- | --- 
-Seconds | 301  
+Seconds | 0 cm 
 --- | --- 
-Seconds | 301  
---- | --- 
-Seconds | 301  
+Seconds | 9 cm
 
 
 Anyway the user can be changed it.
