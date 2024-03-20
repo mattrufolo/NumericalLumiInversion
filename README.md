@@ -58,8 +58,7 @@ As choice for the different parameters, it has be choosen a default choice, insp
 
 Parameters | value 
 --- | --- 
-dθ<sub>x</sub>,dθ<sub>y</sub>,dμ<sub>x</sub>,dμ<sub>y</sub> | 0  X<sub>2</sub><sup>*</sup>
-
+dθ<sub>x</sub>,dθ<sub>y</sub>,dμ<sub>x</sub>,dμ<sub>y</sub> | 0  
 Δθ<sub>0x</sub> | 0 μrad
 Δθ<sub>0y</sub> | 320 μrad
 β<sub>x1</sub><sup>*</sup> ,β<sub>x2</sub><sup>*</sup> ,β<sub>y1</sub><sup>*</sup> ,β<sub>y2</sub><sup>*</sup> | 30 cm
