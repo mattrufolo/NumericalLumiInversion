@@ -13,9 +13,24 @@ import yaml
 from user_defined_functions import generate_run_sh
 from user_defined_functions import generate_run_sh_htc
 
-# Import the configuration
-config=yaml.safe_load(open('config.yaml'))
 
+# Read the active environment name from the local environment
+active_environment = os.getenv('CONDA_DEFAULT_ENV')
+
+# Load the YAML file
+with open('config.yaml', 'r') as file:
+    data = yaml.safe_load(file)
+
+# Update the 'setup_env_script' value with the active environment name
+data['root']['setup_env_script'] = f'activate {active_environment}'
+
+# Serialize the updated data structure back into a YAML file
+with open('local_config.yaml', 'w') as file:
+    yaml.dump(data, file)
+
+
+# Import the configuration
+config=yaml.safe_load(open('local_config.yaml'))
 
 # The user defines the variable to scan
 # machine parameters scans
