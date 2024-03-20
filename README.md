@@ -12,6 +12,7 @@ git clone https://github.com/mattrufolo/NumericalLumiInversion.git
 pip install ./NumericalLumiInversion
 cd NumericalLumiInversion
 pip install ./inv_gauss_tree_maker
+python create_directories.py 
 ```
 
 ## To run some examples:
