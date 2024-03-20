@@ -42,7 +42,7 @@ dict = {'mu0x':[0.01],'mu0y':[0.01],'px':[0.01],'py':[0.01]}
 title = r'Reconstruction of target $\mathbf{\vec{\epsilon}}$ by Luminosity, varying separation & crossing angle ($\mathbf{\vec{\mu}}$,$\mathbf{\vec{\theta}})$'
 titles_iter = r'Reconstruction iterations in order to reach a specific $\vec{\epsilon}$, varying $\mathbf{\mu}$ & $\mathbf{\theta}$'
 titles_iter_zoom = r'Zoom on reconstruction iterations in order to reach a specific $\vec{\epsilon}$, varying $\mathbf{\mu}$ & $\mathbf{\theta}$'
-path = f'../examples/trees/errxy12/000'
+path = f'../examples/trees/tree_errxy12_betascan/000'
 js = open(path + '/output_data.json')
 data_out = json.load(js)
 
@@ -58,7 +58,7 @@ for jobs in range(14):
     #square definition
 
 
-    path = f'../examples/trees/errxy12//{jobs+1:03}'
+    path = f'../examples/trees/tree_errxy12_betascan//{jobs+1:03}'
     js = open(path + '/output_data.json')
     data_out = json.load(js)
     frac_int_eps = np.concatenate([frac_int_eps,[[data_out['eps'][ii][jj]/(2.3e-6)-1 for jj in\
