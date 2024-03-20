@@ -56,9 +56,21 @@ The output of this computation will be:
 
 As choice for the different parameters, it has be choosen a default choice, inspiring on the LHC parameters:
 
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+Parameters | value 
+--- | --- 
+Seconds | 0  
+--- | --- 
+Seconds | 0 &mu rad
+--- | --- 
+Seconds | 301  
+--- | --- 
+Seconds | 301  
+--- | --- 
+Seconds | 301  
+--- | --- 
+Seconds | 301  
+--- | --- 
+Seconds | 301  
 
 
 Anyway the user can be changed it.
