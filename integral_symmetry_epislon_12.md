@@ -1,6 +1,6 @@
 ### Reason behind the computation
 
-From [Herr and Muratori](https://cds.cern.ch/record/941318/files/p361.pdf), assuming that the beams distributions are factorizable in the three spatial directions and a particular dependence between the axes, it is possible to obtain this formula for the instantaneous luminosity
+From [Herr and Muratori](https://cds.cern.ch/record/941318/files/p361.pdf), assuming that the beams distributions are factorizable in the three spatial directions and a particular dependence between the beam distributions along the axes, it is possible to obtain this formula for the instantaneous luminosity
 
 $$
     L = N_1N_2n_bf_r\sqrt{(\vec{v_1}-\vec{v_2})^2-\frac{\vec{v_1}\times\vec{v_2}}{c^2}}\int_{-\infty}^\infty\int_{-\infty}^\infty\rho_z^{B1}\rho_z^{B2}dt \int_{-\infty}^\infty\rho_x^{B1}\rho_x^{B2}dx\int_{-\infty}^\infty\rho_y^{B1}\rho_y^{B2}dydz
@@ -12,7 +12,6 @@ $$
         \rho^B_i = \frac{1}{\sqrt{2\pi}\sigma_{i,B}}e^{-\frac{(i-\mu_{i,B})^2}{2\sigma_{i,B}^2}}, \quad \text{with } B\in\{B1,B2\} \text{ and } i\in\{x,y,z\}
 $$
 
-where 
 
 From this assumption and doing some computation, it is possible to rewrite the luminosity formula like: 
 

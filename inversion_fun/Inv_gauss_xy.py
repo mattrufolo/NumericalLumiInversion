@@ -25,6 +25,7 @@ print("numbu")
 [dmu0x,dmu0y] = [0,0]
 [dpx,dpy] = [0,0]
 
+#choices of the parameter configurations.
 parameters_sym_x = [f,nb,N,N,energy_tot,energy_tot,dif_mu0x,dif_mu0y,dif_px,dif_py, alphax,alphay,alphax,alphay,sigmaz,sigmaz,
             betax,betay,betax,betay,deltap_p0,deltap_p0,dmu0x,dmu0y,-dmu0x,-dmu0y,dpx,dpy,-dpx,-dpy]
 
@@ -42,12 +43,41 @@ dict_par = {'f':0,'nb':1,'N1':2,'N2':3,'energy_tot1':4,'energy_tot2':5,'mu0x':6,
 
 #Luminosity that we imagine and the real one!
 def L_over_parameters_sym(epsx1,epsy1,epsx2,epsy2, par = parameters_sym_x):
+    '''
+    Ridefinition of the luminosity model to set the nominal configuration as default one
+    Input:
+        - epsx1: emittance for beam1 on the x-axis
+        - epsx2: emittance for beam2 on the x-axis
+        - epsy1: emittance for beam1 on the y-axis
+        - epsy2: emittance for beam2 on the y-axis
+        - par:  machine parameters
+                (default parameters_sym_1, the nominal configuration)
 
+    Output:
+        - the luminosity value with the chosen input.
+    '''
     return lumi.L(epsx1,epsy1,epsx2,epsy2,*par)
 
 
 # computation in order to obtain the shift in order to change the original luminosity of a percentage!
 def percent_sym_short(epsx1,epsy1,epsx2,epsy2,delta,param,m, par = parameters_sym_x):
+    '''
+    It returns the percentage of change from the nominal luminosity
+    changing the parameter 'param' of 'delta' 
+    Input:
+        - epsx1: emittance for beam1 on the x-axis
+        - epsx2: emittance for beam2 on the x-axis
+        - epsy1: emittance for beam1 on the y-axis
+        - epsy2: emittance for beam2 on the y-axis
+        - delta: the shift value of the parameter 
+        - param: the name of the parameter to shift
+        - m: the sign of the shift in the luminosity
+        - par:  machine parameters
+                (default parameters_sym_1, the nominal configuration)
+
+    Output:
+        - the shift in percentage of the luminosity value
+    '''
     delta_param = copy.copy(par)
     delta_param[dict_par[param]] += delta
     len(par)
@@ -65,13 +95,26 @@ def percent_sym_short(epsx1,epsy1,epsx2,epsy2,delta,param,m, par = parameters_sy
 
 def inv_gauss_xy(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, par = parameters_sym_x):
     '''
-    Inversion the luminosity function in order to obtain the emittances, in the case in which the model
-    is coherent and also the parameters, shifting the parameters in the dict_shift
-    but once a time, can be generalized to multiple shift at the same time wrt to the reference configuration.
+    Inversion the luminosity function in order to obtain the emittances without considering 
+    the luminosity measurement error, shifting the parameters in the dict_shift once a time.
+    Input:
+        - epsx: emittance for x-axis (beam1 = beam2)
+        - epsy: emittance for y-axis (beam1 = beam2)
+        - dict_shift: a dictionary in which the key is the name of the parameter
+                      to change, while the value is a list containing how much should
+                      be the shift in percentage on the nominal luminosity value
+        - nfev: the maximum number of iteration of the non-linear LS
+        - verbose: to print some output
+        - par:  machine parameters
+                (default parameters_sym_1, the nominal configuration)
 
-    dict_shift: is a dictionary in which the keys are the parameters that we want to change, 
-    and the values is the change in percentage that we want to see in the original luminosity
-
+    Output:
+        - root.x: the numerical solution
+        - root.fun: the output of the system at the numerical solution
+        - root.jac: the Jacobian of the system at the numerical solution
+        - time_LS: the computation time
+        - root.nfev: the number of iteration of the non-linear LS
+   
     '''
  
     delta_par = {}
@@ -135,13 +178,27 @@ def inv_gauss_xy(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, par = parameters
 
 def inv_gauss_xy_randerr(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, iteration  = 0):
     '''
-    Inversion the luminosity function in order to obtain the emittances, in the case in which the model
-    is coherent and also the parameters, shifting the parameters in the dict_shift
-    but once a time, can be generalized to multiple shift at the same time wrt to the reference configuration.
+    Inversion the luminosity function in order to obtain the emittances considering 
+    the luminosity measurement error, shifting one initial choise of parameters
+    in the dict_shift once a time.
+    Input:
+        - epsx: emittance for x-axis (beam1 = beam2)
+        - epsy: emittance for y-axis (beam1 = beam2)
+        - dict_shift: a dictionary in which the key is the name of the parameter
+                      to change, while the value is a list containing how much should
+                      be the shift in percentage on the nominal luminosity value
+        - nfev: the maximum number of iteration of the non-linear LS
+        - verbose: to print some output
+        - par:  machine parameters
+                (default parameters_sym_1, the nominal configuration)
 
-    dict_shift: is a dictionary in which the keys are the parameters that we want to change, 
-    and the values is the change in percentage that we want to see in the original luminosity
-
+    Output:
+        - root.x: the numerical solution
+        - root.fun: the output of the system at the numerical solution
+        - root.jac: the Jacobian of the system at the numerical solution
+        - time_LS: the computation time
+        - root.nfev: the number of iteration of the non-linear LS
+   
     '''
     print("u")
     iteration*=0
@@ -255,13 +312,27 @@ def inv_gauss_xy_randerr(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, iteratio
 
 def inv_gauss_xy_randerr_2(epsx,epsy,dict_shift,nfev = 3000, verbose = 0, iteration  = 0, para = [parameters_sym_x,parameters_sym_y]):
     '''
-    Inversion the luminosity function in order to obtain the emittances, in the case in which the model
-    is coherent and also the parameters, shifting the parameters in the dict_shift
-    but once a time, can be generalized to multiple shift at the same time wrt to the reference configuration.
+    Inversion the luminosity function in order to obtain the emittances considering 
+    the luminosity measurement error.
+    It consider two different initial configuration for the machine parameters,
+    shifting both the choise using for each the shifts in the dict_shift once a time.
+    Input:
+        - epsx: emittance for x-axis (beam1 = beam2)
+        - epsy: emittance for y-axis (beam1 = beam2)
+        - dict_shift: a dictionary in which the key is the name of the parameter
+                      to change, while the value is a list containing how much should
+                      be the shift in percentage on the nominal luminosity value
+        - nfev: the maximum number of iteration of the non-linear LS
+        - verbose: to print some output
 
-    dict_shift: is a dictionary in which the keys are the parameters that we want to change, 
-    and the values is the change in percentage that we want to see in the original luminosity
 
+    Output:
+        - root.x: the numerical solution
+        - root.fun: the output of the system at the numerical solution
+        - root.jac: the Jacobian of the system at the numerical solution
+        - time_LS: the computation time
+        - root.nfev: the number of iteration of the non-linear LS
+   
     '''
     print("u")
     iteration*=0
