@@ -58,11 +58,11 @@ As choice for the different parameters, it has be choosen a default choice, insp
 
 Parameters | value 
 --- | --- 
-Seconds | 0  
+dθ<sub>x</sub>,dθ<sub>y</sub>,dμ<sub>x</sub>,dμ<sub>y</sub> | 0  
 --- | --- 
-X<sub>2</sub> | 0 μrad
+Δθ<sub>0x</sub> | 0 μrad
 --- | --- 
-Seconds | 320 μrad
+Δθ<sub>0y</sub> | 320 μrad
 --- | --- 
 Seconds | 30 cm
 --- | --- 
