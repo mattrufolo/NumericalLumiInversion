@@ -24,13 +24,13 @@ python scanner_penaltyxy_err.py
 ```
 
 From this three examples it is possible to achieve the 3 different plots represented in the paper. Obiovously the user can decide how sharp should be the
-grid for the different scanner.
+grid for the different figures.
 
 ## Usage
 
 ### Numerical Inversion
 
-Given the machine parameters, the different scripts in "inversion_fun" use a perturbative method in order to obtain from the non-linear Least Squares of scipy the transverse emittances from the luminosity model. For example the user can run the following example
+Given the machine parameters, the different scripts in "inversion_fun" use a perturbative method in order to obtain the transverse emittances from the luminosity model, using the non-linear Least Squares of scipy . For example the user can run the following example
 
 ```python
 from inversion_fun import Inv_gauss_xy as  inv_g
@@ -50,12 +50,12 @@ dict_shift = {'mu0x':[0.01]}
 
 The output of this computation will be:
 - sol: the numerical solution
-- f: the function of the system at the numerical solution
+- f: the output of the system at the numerical solution
 - J: the Jacobian of the system at the numerical solution
 - time: the computation time
 - iter: the number of iteration of the Least Squares.
 
-As choice for the different parameters, it has be choosen a default choice, inspiring on the LHC parameters:
+In the repository it has been chosen a nominal configuration for the parameters, inspiring on the LHC:
 
 Parameters | value 
 --- | --- 
@@ -67,34 +67,36 @@ dθ<sub>x</sub>,dθ<sub>y</sub>,dμ<sub>x</sub>,dμ<sub>y</sub> | 0
 σ<sub>z1</sub>,σ<sub>z2</sub>| 9 cm
 
 
-Anyway the user can be changed it.
+Anyway the user can change it.
 
 ### Parallel computation
 
-Some results in a subfolder of the examples have been done with the help of a tree maker, in order to simulate more choices of the beam transverse emittances.
+In the subfolder "examples/trees" there are some tree structure, in order to simulate in parallel a big statistic of beam transverse emittances.
 
-Running in "inv_gauss_tree_maker"
+Running in "inv_gauss_tree_maker/"
 
 ```bash
 python 003_post_process
 ```
 
-It is possible to obtain different plots in the subfolder trees of examples/. In particular for each case analyzed, it has been represented:
+It is possible to obtain different plots in the subfolder "examples/trees/plot". In particular for each subfolder analyzed, there is:
 
-- in one_eps subfolder: the different iterations of the LS before reaching the its final guess
-- the plots of the different choices of the emittances and all their guesses
+- in "one_eps" subfolder: the different iterations of the LS before reaching its final estimation
+- the plots of the different random choices of the emittances and all their estimations
 - the histogram of the relative error for each component of the estimation.
 
 
 ## Last example
 
-Unfortunately for a memory reason, I could not represent the most interesting and final result of the case with all the different emittances between axes and beams, even considering the luminosity measurement error. If the user is interested in doing that he can use ~20 CPUs to see the result. He has to run in the inv_gauss_tree_maker subfolder
+For a memory reason, I could not represent the most interesting and final result, i.e. the case where($\epsilon_{x1}\neq\epsilon_{x2}\neq\epsilon_{y1}\neq\epsilon_{y2} $), even considering the luminosity measurement error. 
+
+If the user is interested in computing this case, he can use ~20 CPUs to see the result. He has to run in the folder "inv_gauss_tree_maker"
 
 ```bash
 python 001_make_folders.py
 python 002_cronjob.py
 ```
-Once the tree_maker.log in the root is 'completed'. You can run 
+Once the tree_maker.log in the root of "tree_errxy12_betascan", is 'completed'. You can run 
 
 ```bash
 python 002_cronjob.py
