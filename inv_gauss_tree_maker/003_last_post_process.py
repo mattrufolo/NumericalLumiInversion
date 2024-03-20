@@ -1,4 +1,4 @@
-#%%
+
 import numpy as np
 from numpy import linalg as LA
 import pandas as pd
@@ -19,8 +19,6 @@ def reject_outliers(data, m=4):
     idx = abs(data - np.mean(data)) < m * np.std(data)
     return data[idx], idx
 
-
-# %%
 #TREES PLOT FOR 4 DIMENSIONS problems with no error.
 
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]

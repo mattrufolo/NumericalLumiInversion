@@ -1,4 +1,4 @@
-#%%
+
 import numpy as np
 from scipy import integrate
 from inversion_fun import particle

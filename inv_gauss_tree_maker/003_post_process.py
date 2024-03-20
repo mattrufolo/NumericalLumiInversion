@@ -1,4 +1,4 @@
-#%%
+
 import numpy as np
 from numpy import linalg as LA
 import pandas as pd
@@ -19,7 +19,6 @@ def reject_outliers(data, m=7):
     idx = abs(data - np.mean(data)) < m * np.std(data)
     return data[idx], idx
 
-#%%
 #TREES PLOT FOR 2 DIMENSIONS problems without error
 
 
@@ -202,8 +201,6 @@ plt.savefig(f'{folder}/histogram_rel_err.png')
 
 
 
-#%%
-
 #TREES PLOT FOR 2 DIMENSIONS problems with error, using 1IP
 
 
@@ -383,7 +380,7 @@ plt.xlabel('Relative error')
 plt.ylabel('Recurrence')
 plt.savefig(f'{folder}/histogram_rel_err.png')
 
-#%%
+
 #TREES PLOT FOR 2 DIMENSIONS problems with error, using 2IPs
 
 [f,nb,N,energy_tot] = [11245,2736,1.4e11,6800]

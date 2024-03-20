@@ -1,6 +1,4 @@
-# %%
-# import sys
-# sys.path.append("/var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/tree_maker")
+
 import tree_maker
 from tree_maker import NodeJob
 from tree_maker import initialize

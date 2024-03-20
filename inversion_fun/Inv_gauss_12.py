@@ -1,7 +1,6 @@
 # CHECK IF THE CHANGES IN THE PARAMETERS WOULD LEAD TO AN OFFSET IN THE VALUES OF THE FUNCTION OR THE STRUCTURE IS MORE COMPLEX, IN CASE WHAT IS THIS BEHAVIOUR?
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #NOISE CROSSING ANGLE!!!!!!!!!!!!!! MOVING ONLY ORBIT
-#%%
 import numpy as np
 import random
 import matplotlib.colors as mcolors

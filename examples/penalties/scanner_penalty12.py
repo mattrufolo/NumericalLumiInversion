@@ -1,5 +1,4 @@
 #PLOT OF THE PENALTY FUNCTION ON EPS12, WITHOUT ERROR
-#%%
 import contextlib
 import random
 import numpy as np

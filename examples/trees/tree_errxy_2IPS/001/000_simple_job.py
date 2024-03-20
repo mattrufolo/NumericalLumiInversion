@@ -1,4 +1,4 @@
-#%%
+
 # import json
 import numpy as np
 import random
@@ -79,4 +79,3 @@ if tree_maker is not None:
     tree_maker.tag_json.tag_it(cfg['log_file'], 'completed')
 #print(df)
 
-# %%

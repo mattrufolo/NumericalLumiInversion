@@ -1,9 +1,8 @@
-# %%
+
 """
 Example of a chronjob
 """
 
-# %%
 # import sys
 # sys.path.append("/var/data/mrufolo/Inverting_luminosity/inv_gauss_tree_maker/tree_maker")
 import pdb
@@ -147,7 +146,6 @@ class cluster():
 
 
 
-# %%
 # Load the tree from a yaml
 if __name__=='__main__':
     root = tree_maker.tree_from_json('tree_maker.json')

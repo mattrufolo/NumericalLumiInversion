@@ -88,7 +88,7 @@ It is possible to obtain different plots in the subfolder trees of examples/. In
 
 ## Last example
 
-Unfortunately for a memory reason, I could not represent the most interesting and final result of the case with all the different emittances between axes and beams, even considering the luminosity measurement error. If the user is interested in doing that he can use ~20 CPUs to see the result himself. He has to run in the inv_gauss_tree_maker subfolder
+Unfortunately for a memory reason, I could not represent the most interesting and final result of the case with all the different emittances between axes and beams, even considering the luminosity measurement error. If the user is interested in doing that he can use ~20 CPUs to see the result. He has to run in the inv_gauss_tree_maker subfolder
 
 ```bash
 python 001_make_folders.py

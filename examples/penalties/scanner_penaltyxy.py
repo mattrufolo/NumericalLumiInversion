@@ -1,5 +1,4 @@
 #PLOT OF THE PENALTY FUNCTION ON EPSXY, WITH ERROR
-#%%
 import contextlib
 import random
 import numpy as np
