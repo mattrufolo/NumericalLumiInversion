@@ -23,7 +23,7 @@ python scanner_penaltyxy.py
 python scanner_penaltyxy_err.py
 ```
 
-From this three examples it is possible to achieve the 3 different plots represented in the paper. Obiovously the user can decide how sharp should be the
+ From this three examples it is possible to achieve the 3 different plots represented in the paper. Obiovously the user can decide how sharp should be the
 grid for the different figures.
 
 ## Usage
